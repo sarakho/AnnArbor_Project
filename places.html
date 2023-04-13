@@ -19,16 +19,17 @@
     <header>
         <nav class="home-nav">
           <div class="nav-links">
+            <img class="logo" src="images/A2.png">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="places.html">Places</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li class="active"><a href="places.html">PLACES</a></li>
+                <!-- <li><a href="events.html">Events</a></li> -->
             </ul>
           </div>
         </nav>
       </header>
 
-      <h1>Places to visit in Ann Arbor!</h1>
+      <h1 class="page-h1">Places to visit in Ann Arbor!</h1>
 
     <main>
         <div id="buttons">
@@ -38,58 +39,53 @@
             <button class="button" onclick="filterObjects('food')"> Food</button>
         </div>
 
-        <!-- <div class="objects">
-            <div class="card entertainment">Michigan Theatre</div>
-            <div class="card entertainment">Hill Auditorium</div>
-            <div class="card coffee">Vertex</div>
-            <div class="card coffee">Comet</div>
-            <div class="card food">Zingerman's</div>
-            <div class="card food">Aventura</div>
+        <!-- <div class="buttons">
+            <button class="button" onclick="filterObjects('all')"> show all </button>
+            <button class="button" onclick="filterObjects('entertainment')"> Entertainment</button>
+            <button class="button" onclick="filterObjects('coffee')"> Coffee</button>
+            <button class="button" onclick="filterObjects('food')"> Food</button>
         </div> -->
+
 
         <div class="places-container">
             <div class="card entertainment">
                 <h1 class="places-h1">Michigan Theatre</h1>
                 <div class="places-img">
-                    <img src="images/michigantheatre.jpeg" alt=###></img>
+                    <img class="places-img" src="images/michigantheatre.jpeg" alt=###></img>
                 </div>
                 <div class="overlay">
-                    <div class="overlay-text">Hours and Location</div>
+                    <div class="overlay-text">603 E Liberty St<br>Open Tuesdays & Thursdays - Sundays</lb></div>
                 </div>
-                <!-- <button id="button">more info</button> -->
-                <!-- <p>The Michigan Theatre is home to the films, music, and arts cultures throughout the year. </p> -->
-                <!-- <p class="location"> Location: </p>
-                <p class="hours"> Hours:</p> -->
             </div>
 
             <div class="card entertainment">
                 <h1 class="places-h1">Hill Auditorium</h1>
                 <div class="places-img">
-                    <img src="images/hill_auditorium.jpeg" alt=###>
+                    <img class="places-img" src="images/hill_auditorium.jpeg" alt=###>
                 </div>
-                <!-- <p>Hill hill-auditorium is home to the films, music, and arts cultures throughout the year. </p> -->
-                <!-- <p class="location"> Location: </p>
-                <p class="hours"> Hours:</p> -->
+                <div class="overlay">
+                    <div class="overlay-text">825 N University Ave<br></div>
+                </div>
             </div>
 
             <div class="card coffee">
                 <h1 class="places-h1">Vertex Coffee</h1>
                 <div class="places-img">
-                    <img src="images/vertexcoff.jpeg" alt=###></img>
+                    <img class="places-img" src="images/vertexcoff.jpeg" alt=###></img>
                 </div>
-                <!-- <p>The Michigan Theatre is home to the films, music, and arts cultures throughout the year. </p> -->
-                <!-- <p class="location"> Location: </p>
-                <p class="hours"> Hours:</p> -->
+                <div class="overlay">
+                    <div class="overlay-text">1335 S University Ave<br>Open<br>Mon-Fri 7a-6pm<br>Weekends 8a-6p</div>
+                </div>
             </div>
 
             <div class="card coffee">
                 <h1 class="places-h1">Comet Coffee</h1>
                 <div class="places-img">
-                    <img src="images/comet.jpeg" alt=###></img>
+                    <img class="places-img" src="images/comet.jpeg" alt=###></img>
                 </div>
-                <!-- <p>Hill hill-auditorium is home to the films, music, and arts cultures throughout the year. </p> -->
-                <!-- <p class="location"> Location: </p>
-                <p class="hours"> Hours:</p> -->
+                <div class="overlay">
+                    <div class="overlay-text">16 Nickels Arcade<br>Open<br>Mon-Fri 7a-6pm<br>Weekends 8a-6p</div>
+                </div>
             </div>
 
             <div class="card food">
@@ -97,9 +93,9 @@
                 <div class="places-img">
                     <img class="places-img" src="images/zing.jpeg" alt=###></img>
                 </div>
-                <!-- <p>The Michigan Theatre is home to the films, music, and arts cultures throughout the year. </p> -->
-                <!-- <p class="location"> Location: </p>
-                <p class="hours"> Hours:</p> -->
+                <div class="overlay">
+                    <div class="overlay-text">422 Detroit St<br>Open<br>Sun-Friday 11AM-7PM</div>
+                </div>
             </div>
 
             <div class="card food">
@@ -107,23 +103,17 @@
                 <div class="places-img">
                     <img class="places-img" src="images/frita.jpeg" alt=###></img>
                 </div>
-                <!-- <p>Hill hill-auditorium is home to the films, music, and arts cultures throughout the year. </p> -->
-                <!-- <p class="location"> Location: </p>
-                <p class="hours"> Hours:</p> -->
-            </div>
-            
-        </div>
-
-        
-
-        <div class="bg-modal">
-            <div class="modal-content">
-                <div class="close">+</div>
-                <p>Location:</p>
-                <p>Hours:</p>
+                <div class="overlay">
+                    <div class="overlay-text">117 W Washington St<br>Open<br>Sun-Thursday 11AM-11PM<br>Fri-Saturday 11AM-12AM</div>
+                </div>
             </div>
         </div>
-    
     </main>
+
+    <footer>
+        <p class="thanks">
+          Thanks for visiting! <br> Currated from https://www.annarbor.org/restaurants/ in 2023</p>
+        <!-- <a href="#mainstuff" class="tops">Back to Top</a> -->
+    </footer>
 </body>
 </html>
