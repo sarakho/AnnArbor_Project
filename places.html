@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/java.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+    <title>Ann Arbor Website</title>
+
+</head>
+
+<body>
+    <header>
+        <nav class="home-nav">
+          <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="places.html">Places</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <h1>Places to visit in Ann Arbor!</h1>
+
+    <main>
+        <div id="buttons">
+            <button class="button" onclick="filterObjects('all')"> show all </button>
+            <button class="button" onclick="filterObjects('entertainment')"> Entertainment</button>
+            <button class="button" onclick="filterObjects('coffee')"> Coffee</button>
+            <button class="button" onclick="filterObjects('food')"> Food</button>
+        </div>
+
+        <!-- <div class="objects">
+            <div class="card entertainment">Michigan Theatre</div>
+            <div class="card entertainment">Hill Auditorium</div>
+            <div class="card coffee">Vertex</div>
+            <div class="card coffee">Comet</div>
+            <div class="card food">Zingerman's</div>
+            <div class="card food">Aventura</div>
+        </div> -->
+
+        <div class="places-container">
+            <div class="card entertainment">
+                <h1 class="places-h1">Michigan Theatre</h1>
+                <div class="places-img">
+                    <img src="images/michigantheatre.jpeg" alt=###></img>
+                </div>
+                <div class="overlay">
+                    <div class="overlay-text">Hours and Location</div>
+                </div>
+                <!-- <button id="button">more info</button> -->
+                <!-- <p>The Michigan Theatre is home to the films, music, and arts cultures throughout the year. </p> -->
+                <!-- <p class="location"> Location: </p>
+                <p class="hours"> Hours:</p> -->
+            </div>
+
+            <div class="card entertainment">
+                <h1 class="places-h1">Hill Auditorium</h1>
+                <div class="places-img">
+                    <img src="images/hill_auditorium.jpeg" alt=###>
+                </div>
+                <!-- <p>Hill hill-auditorium is home to the films, music, and arts cultures throughout the year. </p> -->
+                <!-- <p class="location"> Location: </p>
+                <p class="hours"> Hours:</p> -->
+            </div>
+
+            <div class="card coffee">
+                <h1 class="places-h1">Vertex Coffee</h1>
+                <div class="places-img">
+                    <img src="images/vertexcoff.jpeg" alt=###></img>
+                </div>
+                <!-- <p>The Michigan Theatre is home to the films, music, and arts cultures throughout the year. </p> -->
+                <!-- <p class="location"> Location: </p>
+                <p class="hours"> Hours:</p> -->
+            </div>
+
+            <div class="card coffee">
+                <h1 class="places-h1">Comet Coffee</h1>
+                <div class="places-img">
+                    <img src="images/comet.jpeg" alt=###></img>
+                </div>
+                <!-- <p>Hill hill-auditorium is home to the films, music, and arts cultures throughout the year. </p> -->
+                <!-- <p class="location"> Location: </p>
+                <p class="hours"> Hours:</p> -->
+            </div>
+
+            <div class="card food">
+                <h1 class="places-h1">Zingerman's</h1>
+                <div class="places-img">
+                    <img class="places-img" src="images/zing.jpeg" alt=###></img>
+                </div>
+                <!-- <p>The Michigan Theatre is home to the films, music, and arts cultures throughout the year. </p> -->
+                <!-- <p class="location"> Location: </p>
+                <p class="hours"> Hours:</p> -->
+            </div>
+
+            <div class="card food">
+                <h1 class="places-h1">Frita Batidos</h1>
+                <div class="places-img">
+                    <img class="places-img" src="images/frita.jpeg" alt=###></img>
+                </div>
+                <!-- <p>Hill hill-auditorium is home to the films, music, and arts cultures throughout the year. </p> -->
+                <!-- <p class="location"> Location: </p>
+                <p class="hours"> Hours:</p> -->
+            </div>
+            
+        </div>
+
+        
+
+        <div class="bg-modal">
+            <div class="modal-content">
+                <div class="close">+</div>
+                <p>Location:</p>
+                <p>Hours:</p>
+            </div>
+        </div>
+    
+    </main>
+</body>
+</html>

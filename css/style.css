@@ -1,0 +1,212 @@
+.home-nav {
+    background-color: white;
+    width:100vw;
+    /* position: fixed; */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+nav li {
+    display: inline;
+    margin: 20px;
+    font-family: "Poppins";
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 14pt;
+    color: rgb(30, 143, 113);
+    padding: 10px
+}
+
+nav ul li a:hover {
+    background-color: rgb(30, 143, 113);
+    /* border-radius: 30px; */
+    color: white;
+    transition: 0.5s;
+}
+
+.active a {
+    background-color: rgb(30, 143, 113);
+    color: white;
+}
+
+.hero {
+    display: float;
+    background-image: url('../images/Ann_Arbor_Skyline_2021.jpeg');
+    height: 75vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+  }
+
+.hero-text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    height: 75vh;
+    width: 100%
+}
+
+.hero-h1 {
+    font-size: 40pt;
+    color: white;
+    font-family: "Poppins";
+    line-height: 20px;
+}
+
+.hero-h2 {
+    font-size: 15pt;
+    color: white;
+    font-family: "Poppins";
+    margin-bottom: 50px;
+}
+
+.explore {
+    border: none;
+    background-color: black;
+    color: white;
+    margin: 30px;
+    padding: 15px;
+    filter: drop-shadow(4px 4px 5px rgb(0, 0, 0));
+    font-family: "Poppins";
+    font-size: 12pt;
+}
+
+.explore:hover {
+    background-color: white;
+    transition: 0.5s;
+    color: black;
+}
+
+h1 {
+    color: black;
+    font-family: "Poppins";
+    font-weight: bold;
+    font-size: 30pt;
+    padding: 20px;
+}
+
+.places-h1 {
+    font-size: 20pt;
+}
+
+p {
+    padding: 10px;
+    font-family: "Poppins"
+}
+
+.places-container, .events-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    /* margin: 10px 200px 10px 200px */
+}
+
+.june, .july, .august, .september, .october, .november, .december {
+    margin: 10px;
+    background: white;
+    filter: drop-shadow(2px 2px 4px rgb(164, 162, 162))
+}
+
+
+.places-img {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.places-img img {
+    object-fit: contain;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    color: rgb(97, 96, 96);
+    padding: 5px;
+    font-family: "poppins";
+}
+
+#buttons {
+    text-align: center;
+}
+
+.button:hover {
+    text-decoration: underline solid;
+    text-underline-offset: 8px;
+}
+
+.button.active {
+    text-decoration: underline solid;
+    text-underline-offset: 8px;
+}
+
+.hide {
+    display: none;
+}
+
+.objects {
+    overflow: hidden;
+}
+
+.card {
+    margin: 5px;
+    background: white;
+    filter: drop-shadow(2px 2px 4px rgb(164, 162, 162));
+    display: none;
+}
+
+.show {
+    display: block;
+
+}
+
+#overlay {
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
+}
+
+.card:hover #overlay {
+    opacity: 1;
+}
+
+.info {
+    font-family: "poppins";
+    color: rgba(255, 255, 255, 0.85)
+}
+
+.overlay-text {
+    color: white;
+    font-family: "poppins";
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.overlay:hover {
+    opacity: 1;
+    transition: 0.3s
+}
