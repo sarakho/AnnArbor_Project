@@ -7,7 +7,6 @@
     
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/java.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 
@@ -17,103 +16,158 @@
 
 <body>
     <header>
-        <nav class="home-nav">
+        <nav class="places-nav">
           <div class="nav-links">
             <img class="logo" src="images/A2.png">
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li class="active"><a href="places.html">PLACES</a></li>
-                <!-- <li><a href="events.html">Events</a></li> -->
             </ul>
           </div>
         </nav>
       </header>
 
-      <h1 class="page-h1">Places to visit in Ann Arbor!</h1>
-
     <main>
-        <div id="buttons">
+        <h1 class="plage-h1">Places to visit in Ann Arbor!</h1>
+
+        <div class="buttons">
             <button class="button" onclick="filterObjects('all')"> show all </button>
             <button class="button" onclick="filterObjects('entertainment')"> Entertainment</button>
             <button class="button" onclick="filterObjects('coffee')"> Coffee</button>
             <button class="button" onclick="filterObjects('food')"> Food</button>
         </div>
-
-        <!-- <div class="buttons">
-            <button class="button" onclick="filterObjects('all')"> show all </button>
-            <button class="button" onclick="filterObjects('entertainment')"> Entertainment</button>
-            <button class="button" onclick="filterObjects('coffee')"> Coffee</button>
-            <button class="button" onclick="filterObjects('food')"> Food</button>
-        </div> -->
-
 
         <div class="places-container">
-            <div class="card entertainment">
-                <h1 class="places-h1">Michigan Theatre</h1>
-                <div class="places-img">
-                    <img class="places-img" src="images/michigantheatre.jpeg" alt=###></img>
+            <button class="card entertainment" onclick="openPop1()">
+                <div>
+                    <h1 class="places-h1">Michigan Theatre</h1>
+                    <div class="places-img">
+                        <img class="places-img" src="images/michigantheatre.jpeg" alt=###></img>
+                    </div>
                 </div>
-                <div class="overlay">
-                    <div class="overlay-text">603 E Liberty St<br>Open Tuesdays & Thursdays - Sundays</lb></div>
-                </div>
-            </div>
+            </button>
 
-            <div class="card entertainment">
-                <h1 class="places-h1">Hill Auditorium</h1>
-                <div class="places-img">
-                    <img class="places-img" src="images/hill_auditorium.jpeg" alt=###>
+            <button class="card entertainment" onclick="openPop2()">
+                <div>
+                    <h1 class="places-h1">Hill Auditorium</h1>
+                    <div class="places-img">
+                        <img class="places-img" src="images/hill_auditorium.jpeg" alt=###>
+                    </div>
                 </div>
-                <div class="overlay">
-                    <div class="overlay-text">825 N University Ave<br></div>
-                </div>
-            </div>
+            </button>
 
-            <div class="card coffee">
-                <h1 class="places-h1">Vertex Coffee</h1>
-                <div class="places-img">
-                    <img class="places-img" src="images/vertexcoff.jpeg" alt=###></img>
+            <button class="card coffee" onclick="openPop3()">
+                <div>
+                    <h1 class="places-h1">Vertex Coffee</h1>
+                    <div class="places-img">
+                        <img class="places-img" src="images/vertexcoff.jpeg" alt=###></img>
+                    </div>
                 </div>
-                <div class="overlay">
-                    <div class="overlay-text">1335 S University Ave<br>Open<br>Mon-Fri 7a-6pm<br>Weekends 8a-6p</div>
-                </div>
-            </div>
+            </button>
 
-            <div class="card coffee">
-                <h1 class="places-h1">Comet Coffee</h1>
-                <div class="places-img">
-                    <img class="places-img" src="images/comet.jpeg" alt=###></img>
+            <button class="card coffee" onclick="openPop4()">
+                <div>
+                    <h1 class="places-h1">Comet Coffee</h1>
+                    <div class="places-img">
+                        <img class="places-img" src="images/comet.jpeg" alt=###></img>
+                    </div>
                 </div>
-                <div class="overlay">
-                    <div class="overlay-text">16 Nickels Arcade<br>Open<br>Mon-Fri 7a-6pm<br>Weekends 8a-6p</div>
-                </div>
-            </div>
+            </button>
 
-            <div class="card food">
-                <h1 class="places-h1">Zingerman's</h1>
-                <div class="places-img">
-                    <img class="places-img" src="images/zing.jpeg" alt=###></img>
+            <button class="card food" onclick="openPop5()">
+                <div>
+                    <h1 class="places-h1">Zingerman's</h1>
+                    <div class="places-img">
+                        <img class="places-img" src="images/zing.jpeg" alt=###></img>
+                    </div>
                 </div>
-                <div class="overlay">
-                    <div class="overlay-text">422 Detroit St<br>Open<br>Sun-Friday 11AM-7PM</div>
-                </div>
-            </div>
+            </button>
 
-            <div class="card food">
-                <h1 class="places-h1">Frita Batidos</h1>
-                <div class="places-img">
-                    <img class="places-img" src="images/frita.jpeg" alt=###></img>
+            <button class="card food" onclick="openPop6()">
+                <div>
+                    <h1 class="places-h1">Frita Batidos</h1>
+                    <div class="places-img">
+                        <img class="places-img" src="images/frita.jpeg" alt=###></img>
+                    </div>
                 </div>
-                <div class="overlay">
-                    <div class="overlay-text">117 W Washington St<br>Open<br>Sun-Thursday 11AM-11PM<br>Fri-Saturday 11AM-12AM</div>
-                </div>
+            </button>
+        </div>
+
+        <div id="a1" class="pop-content">
+            <div id="modal" class="modal-anim">
+                <button id="close-btn" class="close" onclick="closePop1()">close</button>
+            </div>
+            <div class="map">
+                <h3>Michigan Theatre</h1>
+                    <p> Open Mon-Saturdays <br> The Michigan Theatre presents movies, </p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.9526951852404!2d-83.74432942431154!3d42.279533140185904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae3f70f536bd%3A0x5fceaacaf34695ed!2sMichigan%20Theater!5e0!3m2!1sen!2sus!4v1681653161161!5m2!1sen!2sus" width="100%" height="100%" margin="10px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
+
+        <div id="a2" class="pop-content">
+            <div id="modal" class="modal-anim">
+                <button id="close-btn" class="close" onclick="closePop2()">close</button>
+            </div>
+            <div class="map">
+                <h3>Hill Auditorium</h1>
+                    <p> Open Mon-Saturdays. <br> Home to spectacular music and shows, Hill Auditorium celebrates the arts in every way! </p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.9705298304057!2d-83.74165838875176!3d42.27915244008982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae412214c3bf%3A0x825ff43112bad153!2sHill%20Auditorium!5e0!3m2!1sen!2sus!4v1681679081187!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div id="a3" class="pop-content">
+            <div id="modal" class="modal-anim">
+                <button id="close-btn" class="close" onclick="closePop3()">close</button>
+            </div>
+            <div class="map">
+                <h3>Vertext Coffee</h1>
+                    <p> Open MON-FRI 7:30am-6pm & Weekends 8am-6pm.<br>Found at the intersection of Washtenaw Ave and South University Ave, this urban coffee shop offers delicious and unique coffee and baked goods! </p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.157652173836!2d-83.73438548875203!3d42.27515794034175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cafc679fb5e65%3A0xd02127287fe9b43b!2sVertex%20Coffee%20Roasters!5e0!3m2!1sen!2sus!4v1681679133121!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div id="a4" class="pop-content">
+            <div id="modal" class="modal-anim">
+                <button id="close-btn" class="close" onclick="closePop4()">close</button>
+            </div>
+            <div class="map">
+                <h3>Comet Coffee</h1>
+                    <p> Open MON-FRI 7:30am-6:30pm & Weekends 8:30am-6:40pm. <br>Tucked away in Nickel's Arcade, Comet Coffee offers a quaint and cozy coffee experience!</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.005870795719!2d-83.74388258875183!3d42.278398040137375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae3f5c132b09%3A0xfbdbd24f5c10e847!2sComet%20Coffee!5e0!3m2!1sen!2sus!4v1681679546322!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div id="a5" class="pop-content">
+            <div id="modal" class="modal-anim">
+                <button id="close-btn" class="close" onclick="closePop5()">close</button>
+            </div>
+            <div class="map">
+                <h3>Zingerman's</h1>
+                    <p> Open SUN-FRI 11am-7pm & SAT 10am-7pm. <br> Home to delicious breads and pastries, Zingerman's is located in the heart of Kerry Town. Always a buzz, this famous food stop is unique and local to the Ann Arbor area. </p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1174.0975012640968!2d-83.74606569048012!3d42.28465901094736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae15b5e5762d%3A0x501e005b87064778!2sZingerman&#39;s%20Delicatessen!5e0!3m2!1sen!2sus!4v1681679706557!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div id="a6" class="pop-content">
+            <div id="modal" class="modal-anim">
+                <button id="close-btn" class="close" onclick="closePop6()">close</button>
+            </div>
+            <div class="map">
+                <h3>Frita Batidos</h1>
+                    <p> Open SUN-THURS 11am-11pm & FRI-SAT 11am-12am. <br> Inspired by Cuabn culture, the FRITA is a burger traditionally made with chorizo and served with shoestring fries atop a soft egg bun, and BATIDOS are tropical milkshakes that come spiked or unspiked!</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d646.9141399206899!2d-83.74991280835371!3d42.280560078707474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae3d019eccc7%3A0x85b7997a0eade98d!2sFrita%20Batidos%20Ann%20Arbor!5e0!3m2!1sen!2sus!4v1681679774735!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+    </div>
+
     </main>
 
     <footer>
         <p class="thanks">
-          Thanks for visiting! <br> Currated from https://www.annarbor.org/restaurants/ in 2023</p>
-        <!-- <a href="#mainstuff" class="tops">Back to Top</a> -->
+          Thanks for visiting! Designed by Sara Khodadost  <br> Currated from https://www.annarbor.org/restaurants/ in 2023</p>
     </footer>
 </body>
-</html>
+<script src="js/java.js"></script>
+<script src="js/java-pop.js"></script>
+</html> 

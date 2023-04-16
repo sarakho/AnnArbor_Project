@@ -1,24 +1,31 @@
 .home-nav {
+    width:100vw;
+    position: fixed;
+    z-index: 1
+}
+
+.places-nav {
     background-color: white;
     width:100vw;
-    /* position: fixed; */
+    position: fixed;
+    z-index: 1
 }
 
 .nav-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px 40px 10px 10px;
 }
 
 .logo {
-    height: 80px;
+    height: 60px;
     width: auto;
 }
 
 nav li {
     display: inline;
-    margin: 20px;
+    margin: 0px;
     font-family: "Poppins";
 }
 
@@ -43,9 +50,10 @@ nav ul li a:hover {
 }
 
 .hero {
-    display: float;
+    /* display: float; */
     background-image: url('../images/Ann_Arbor_Skyline_2021.jpeg');
-    height: 75vh;
+    width: 100vw;
+    height: 80vh;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -59,35 +67,65 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.6);
-    height: 75vh;
-    width: 100%
+    background: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.9));
+    height: 40vh;
+    width: 100%;
+    padding-top: 100px
 }
 
-.hero-h1 {
+
+.hero-h1 span{
+    display: inline-block;
     font-size: 40pt;
     color: white;
     font-family: "Poppins";
     line-height: 20px;
+    animation: animate 4s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
 }
 
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+    20%
+    {
+        transform: translateY(-20px);
+    }
+    40%,100%
+    {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes reveal {
+    0% {
+      transform: translate(0,100%);
+    }
+    100% {
+      transform: translate(0,0);
+    }
+  }
+
 .hero-h2 {
-    font-size: 15pt;
+    font-size: 11pt;
     color: white;
     font-family: "Poppins";
-    margin-bottom: 50px;
+    margin: 0px 100px 50px 100px;
 }
 
 .explore {
     border: none;
-    background-color: transparent;
-    border: solid white 2px;
+    background-color:rgb(19, 19, 19);
+    /* border: solid white 2px; */
     color: white;
-    margin: 30px;
-    padding: 15px;
+    /* margin: 30px; */
+    padding: 10px;
     filter: drop-shadow(4px 4px 5px rgb(0, 0, 0));
     font-family: "Poppins";
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 .explore:hover {
@@ -105,7 +143,7 @@ h1 {
 }
 
 .places-h1 {
-    font-size: 20pt;
+    font-size: 16pt
 }
 
 p {
@@ -113,12 +151,16 @@ p {
     font-family: "Poppins"
 }
 
-.places-container, .events-container {
+.places-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    margin: 10px 200px 10px 200px;
+    margin: 20px 200px 10px 200px;
     padding-bottom: 100px
+}
+
+.buttons {
+    text-align:  center;
 }
 
 .june, .july, .august, .september, .october, .november, .december {
@@ -134,8 +176,32 @@ p {
     overflow: hidden;
 }
 
+.places-img::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.5s ease all;
+}
+
 .places-img > img {
     object-fit: cover;
+}
+
+.places-img:hover img {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.places-img:hover::after {
+    opacity: 0.2;
+}
+
+.show {
+    display: block;
 }
 
 .button {
@@ -144,7 +210,8 @@ p {
     color: rgb(97, 96, 96);
     padding: 5px;
     font-family: "poppins", "sans serif";
-    font-size: 12pt
+    font-size: 12pt;
+    /* margin-top: 10%; */
 }
 
 #buttons {
@@ -170,6 +237,7 @@ p {
 }
 
 .card {
+    border: none;
     background: white;
     filter: drop-shadow(2px 2px 4px rgb(164, 162, 162));
     display: none;
@@ -177,65 +245,236 @@ p {
 
 .show {
     display: block;
-
 }
 
-#overlay {
-    background: rgba(0, 0, 0, 0.75);
-    opacity: 0;
-    z-index: 2;
-    transition: opacity 0.25s ease;
-    transition: opacity 0.25s ease;
+.plage-h1 {
+    font-size: 34pt;
+    text-align: center;
+    padding-top: 100px
 }
 
-.card:hover #overlay {
-    opacity: 1;
+
+/*<------------------original pop up with modal------------->*/
+
+#link-pop {
+    text-decoration: none;
 }
 
-.info {
-    font-family: "poppins";
-    color: rgba(255, 255, 255, 0.85)
+#a1, #a2, #a3, #a4, #a5, #a6 {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.146);
+    overflow-y: scroll;
+    max-width: 600px;
+    height: 600px;
+    margin: auto;
+    background-color: white;
+    /* justify-content: right;
+    align-content: right; */
+    animation: fadein 0.4s;
+    filter: drop-shadow(2px 2px 4px rgb(0, 0, 0));
 }
 
-.overlay-text {
-    color: white;
-    font-family: "poppins";
-}
 
-.overlay {
+
+/* #modal {
+    display: flex;
+    max-width: 600px;
+    height: 600px;
+    margin: auto;
+    background-color: white;
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    opacity: 0;
+    right: 0;
+    justify-content: right;
+    align-content: right;
+    filter: drop-shadow(2px 2px 5px rgb(0, 0, 0));
+} */
+
+.map {
     display: flex;
+    height: 550px;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+}
+
+.map-h1 {
     text-align: center;
 }
 
-.overlay:hover {
-    opacity: 1;
-    transition: 0.3s
+h3 {
+    font-family: "poppins";
+    font-size: 20pt;
+    padding-left: 20px;
 }
 
-/* Class for JS */
-.card .img-expand {
-    width: 25em;
-    margin: 1em;
+#close-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    height: 40px
+}
+
+#close-btn:hover {
+    background-color: rgb(74, 188, 93);
+}
+
+.modal-anim {
+    display: flex;
+    justify-content: right;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        scale: 0.6;
     }
-
-.card .img-shrink {
-    width: 0em;
-    margin: -1em;
+    to {
+        opacity: 1;
+        scale: 1;
+    }
 }
 
-.page-h1 {
+
+
+/*---------------------------------*/
+.counters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     text-align: center;
+    /* color: white; */
 }
+
+.counter-img {
+    height: 100px;
+}
+
+.count1 {
+    display: flexbox;
+    color: orange;
+    margin: 20px;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.count2 {
+    color: rgb(219, 118, 174); 
+    margin: 20px
+}
+
+.count3 {
+    color: rgb(9, 93, 94);
+    margin: 20px
+}
+
+.p-counter {
+    font-size: 20pt
+}
+/*---------------------------------*/
+@property --1 {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+.restaurants {
+  animation: counter1 6s alternate ease-in-out;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  counter-reset: num var(--1);
+  font: 800 40px systme-ui;
+  font-size: 50pt;
+  font-family: "Poppins";
+  /* color: white; */
+  /* padding: 2rem; */
+  /* padding-top: 60px; */
+}
+
+.restaurants::after {
+  content: counter(num);
+}
+
+@keyframes counter1 {
+  from {
+    --1: 0;
+  }
+  to {
+    --1: 400;
+  }
+}
+/*---------------------------*/
+
+/*---------------------------------*/
+@property --2 {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+  .population {
+    animation: counter2 8s alternate ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    counter-reset: num var(--2);
+    font: 800 40px system-ui;
+    font-family: "Poppins";
+    /* color: white; */
+    font-size: 50pt;
+    /* padding-top: 60px; */
+    /* padding: 2rem; */
+  }
+  
+  .population::after {
+    content: counter(num);
+  }
+  
+  @keyframes counter2 {
+    from {
+      --2: 0;
+    }
+    to {
+      --2: 121536;
+    }
+  }
+  /*---------------------------*/
+
+  @property --3 {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+  .age {
+    animation: counter3 4s alternate ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    counter-reset: num var(--3);
+    font: 800 40px system-ui;
+    font-family: "Poppins";
+    /* padding: 2rem; */
+    /* color: white;
+    padding-top: 60px; */
+    font-size: 50pt;
+  }
+  
+  .age::after {
+    content: counter(num);
+  }
+  
+  @keyframes counter3 {
+    from {
+      --3: 0;
+    }
+    to {
+      --3: 199;
+    }
+  }
+  /*---------------------------*/
 
 .thanks {
     display: flex;
